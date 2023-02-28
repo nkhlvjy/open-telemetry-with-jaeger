@@ -3,7 +3,7 @@ module github.com/nkhlvjy/open-telemetry-with-jaeger/checkout
 go 1.18
 
 require (
-	github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228051021-d18bee576581
+	github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228062117-be2fa0d6f8e8
 	github.com/nkhlvjy/open-telemetry-with-jaeger/utils v0.0.0-20230228062117-be2fa0d6f8e8
 	github.com/streadway/amqp v1.0.0
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.40.0

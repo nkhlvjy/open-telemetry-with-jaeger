@@ -69,6 +69,7 @@ func checkoutHandler(c pb.CheckoutClient) func(http.ResponseWriter, *http.Reques
 		// Check for errors
 		rStatus := status.Convert(err)
 		if rStatus != nil {
+			span.AddEvent(fmt.Sprintf("response error: %v", err.Error()))
 			span.SetStatus(codes.Error, err.Error())
 			w.WriteHeader(http.StatusInternalServerError)
 			return

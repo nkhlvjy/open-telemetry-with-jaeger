@@ -14,6 +14,8 @@ github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
 github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228051021-d18bee576581 h1:y7o8QAoL6TJt2U5DSaf0I1R2dxJ3m+K/L4dY9PMuVTw=
 github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228051021-d18bee576581/go.mod h1:4esvxOR3701SkBwW4q2s9W9qD1xli1jj0RHKEK8gt6I=
+github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228062117-be2fa0d6f8e8 h1:/64ZGMeOV8TixnFe7Sjl52lumDETZ63dnV1rweL+8Fo=
+github.com/nkhlvjy/open-telemetry-with-jaeger/proto v0.0.0-20230228062117-be2fa0d6f8e8/go.mod h1:4esvxOR3701SkBwW4q2s9W9qD1xli1jj0RHKEK8gt6I=
 github.com/nkhlvjy/open-telemetry-with-jaeger/utils v0.0.0-20230228062117-be2fa0d6f8e8 h1:DHZnLloaG8YeEv4wYWswoopKhvs4SvY63I8twM3uydQ=
 github.com/nkhlvjy/open-telemetry-with-jaeger/utils v0.0.0-20230228062117-be2fa0d6f8e8/go.mod h1:92+5LVl4A/co1539aCDyctX8gnRxkCAqzEuCc+v5jaM=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
