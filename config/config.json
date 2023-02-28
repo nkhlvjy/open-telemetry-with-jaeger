@@ -1,9 +1,0 @@
-{
-  "JAEGER_ADDRESS": "localhost",
-  "JAEGER_PORT": "6831",
-  "GRPC_ADDRESS": "localhost:8080",
-  "RABBITMQ_USER": "guest",
-  "RABBITMQ_PASS": "guest",
-  "RABBITMQ_HOST": "localhost",
-  "RABBITMQ_PORT": "5672"
-}
