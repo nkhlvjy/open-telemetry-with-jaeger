@@ -77,7 +77,7 @@ func checkoutHandler(c pb.CheckoutClient) func(http.ResponseWriter, *http.Reques
 
 		// Make the GRPC call to checkout-service
 		_, err = c.DoCheckout(ctx, &pb.CheckoutRequest{
-			ItemsID: []int32{1, 2, 3, 4},
+			FluId: req["flu_id"].(string),
 		})
 
 		// Check for errors
