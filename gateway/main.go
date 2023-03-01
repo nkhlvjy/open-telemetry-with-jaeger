@@ -1,19 +1,20 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	pb "github.com/nkhlvjy/open-telemetry-with-jaeger/proto"
 	"github.com/nkhlvjy/open-telemetry-with-jaeger/utils"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
+	"io/ioutil"
 	"log"
 	"net/http"
 )
-
-var x = 0
 
 func main() {
 	jaegerAddress := utils.EnvString("JAEGER_ADDRESS", "localhost")
@@ -57,12 +58,25 @@ func checkoutHandler(c pb.CheckoutClient) func(http.ResponseWriter, *http.Reques
 
 		// Create a tracer span
 		tr := otel.Tracer("http")
-		ctx, span := tr.Start(r.Context(), fmt.Sprintf("%s %s %d", r.Method, r.RequestURI, x+1))
-		x++
+		ctx, span := tr.Start(r.Context(), fmt.Sprintf("%s %s", r.Method, r.RequestURI))
+		var req map[string]interface{}
+		b, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		err = json.Unmarshal(b, &req)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		fmt.Println(req["flu_id"])
+		span.SetAttributes(attribute.String("flu_id", req["flu_id"].(string)))
+
 		defer span.End()
 
 		// Make the GRPC call to checkout-service
-		_, err := c.DoCheckout(ctx, &pb.CheckoutRequest{
+		_, err = c.DoCheckout(ctx, &pb.CheckoutRequest{
 			ItemsID: []int32{1, 2, 3, 4},
 		})
 
