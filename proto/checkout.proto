@@ -9,7 +9,7 @@ service Checkout {
 }
 
 message CheckoutRequest {
-  repeated int32 itemsID = 1;
+  string fluId = 1;
 }
 
 message CheckoutResponse {
